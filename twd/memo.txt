@@ -1,0 +1,11 @@
+2017-01-28
+(02:47)
+
+1, 关于jquery的使用，现在出现了问题：在独立的网页中引用网上的jquery.js，同时页内插入js是可以运行的，但是在base.html中引用jquery.js则不行，原因不明。
+2，下一步打算实验在独立网页中引用static/js/*.js，看是否可以运行。
+
+(16:02)
+1, 上述问题已经解决，原因估计为导入顺序不对，在base.html的<head>段最开始部分导入jquery.js及rango-jquery.js即可。
+
+(18:12)
+2, 但是现在发现情况并不是这样，将jquery.js, rango-jquery.js放在Bootstrap core JavaScript位置时导入依然可以顺利进行，查看Chrome的JavaScript控制台时发现导入没问题，但是在外部编辑器修改static/*.js时有一定几率导入不及时，原因未知，具体脚本内容要通过JavaScript控制台来查看。
